@@ -1,0 +1,17 @@
+<launch>
+    <!-- For Simulation -->
+    <arg name="sim_mode" default="false" />
+    <param name="/use_sim_time" value="$(arg sim_mode)"/>
+    <arg name="loopTimes"       default="0" />
+    <!-- move base -->
+    <node pkg="robot_navigation" type="way_point.py" respawn="false" name="way_point" output="screen">
+        <!-- params for move_base -->
+        <param name="goalListX" value="[0.33142930269241333, 0.647300660610199, 0.9912248849868774,1.2043869495391846,1.22503662109375,1.0188966989517212,0.7213163375854492,0.2840096354484558,-0.02004086971282959,-0.002792954444885254]" />
+        <param name="goalListY" value="[0.0037084072828292847, 0.007541880011558533, 0.0005669444799423218,0.004535183310508728,-0.44501763582229614,-0.5316784977912903,-0.5350461006164551,-0.5688490867614746,-0.5707226991653442,-0.0014420300722122192]" />
+        <param name="goalListZ" value="[0.008465447862957278, 0.011422536593103156, 0.010369016306379722,0.008762377872269918,-0.7090120818545933,-0.9994072522883045,-0.9993403480965743,-0.9996049169716468,0.7125532714114963,0.016064386834541075]" />
+        <param name="loopTimes" value="$(arg loopTimes)"/>
+        <param name="map_frame" value="map" />
+    </node>
+    
+
+</launch>
